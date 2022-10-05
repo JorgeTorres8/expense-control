@@ -403,3 +403,6 @@ body .modal {
     font-size: 2.4rem;
     text-align: right;
 }
+.swal-wide{
+    font-size:1.5rem !important;
+}

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import "react-circular-progressbar/dist/styles.css"
-
+import "../index.css";
 const ControlPresupuesto = ({
   presupuesto,
   setPresupuesto, 
@@ -46,16 +46,18 @@ const ControlPresupuesto = ({
       showCancelButton: true,
       confirmButtonColor: 'rgb(220 38 38)',
       cancelButtonColor: 'rgb(79 70 229)',
-      confirmButtonText: 'Yes'
+      confirmButtonText: 'Yes',
+      customClass: 'swal-wide'
     }).then((result) => {
       if (result.isConfirmed) {
           setGastos([]);
           setPresupuesto(0);
           setIsValidPresupuesto(false);
-          Swal.fire(
-          'You have reset your budget',
-          '',
-          'success'
+          Swal.fire({
+            title: 'You have reset your budget',
+            text:'',
+            icon:'success',
+            customClass: 'swal-wide',}
         )
       }
     })
